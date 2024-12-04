@@ -1,0 +1,15 @@
+{
+    "name": "ignatha/php_mvc",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Prabowo Ignatha",
+            "email": "prabowoid.2@gmail.com"
+        }
+    ],
+    "require": {}
+}
