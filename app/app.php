@@ -1,6 +1,13 @@
 <?php
 namespace App;
 
-use App\Controllers\HomeController;
+use App\Cores\Routes;
 
-HomeController::index();
+$route = new Routes();
+
+$route->get('/','HomeController@index');
+$route->get('/product','ProductController@index');
+$route->post('/product','ProductController@add');
+$route->get('/product/{id}','ProductController@edit');
+
+$route->run();
