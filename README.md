@@ -5,7 +5,7 @@ pembahasan :
 
 - [x] stuktur folder, namespace dan psr4 composer
 - [x] membuat route dan controller aplikasi
-- [ ] membuat view dan sistem templating sederhana
+- [x] membuat view dan sistem templating sederhana
 - [ ] membuat model untuk akses ke dalam database
 - [ ] membuat crud sederhana dengan memanfaatkan mvc yang sudah dibuat
 - [ ] membuat validasi form dan flash message
