@@ -46,7 +46,8 @@ class Routes {
         if (class_exists($controller)) {
             $instance = new $controller();
             if (method_exists($instance,$method)) {
-                call_user_func_array([$instance,$method],$params);
+                //call_user_func_array([$instance,$method],$params);
+                $instance->$method(...$params); // php terbaru bisa pakai spread
             }else {
                 echo "Method {$method} tidak ditemukan";
             }            
