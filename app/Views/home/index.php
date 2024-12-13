@@ -2,8 +2,28 @@
 
 <?php App\Cores\Views::startSection('content') ?>
 <div>
-    <h1>ini adalah content</h1>
-</div>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($users as $index => $user): ?>
+                    <tr>
+                        <td><?=$index+1?></td>
+                        <td><?=$user->name?></td>
+                        <td><?=$user->email?></td>
+                        <td><?=$user->password?></td>
+                    </tr>  
+            <?php endforeach; ?>
+            <tr></tr>
+        </tbody>
+    </table>
+</div>  
 <?php App\Cores\Views::endSection() ?>
 
 
