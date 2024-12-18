@@ -24,8 +24,10 @@
               <td><?=$user->password?></td>
               <td>
               <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                <button type="button" class="btn btn-warning">Edit</button>
-                <button type="button" class="btn btn-danger">Hapus</button>
+                <a href="/edit/<?=$user->id?>" type="button" class="btn btn-warning">Edit</a>
+                <form action="/delete/<?=$user->id?>" method="post">
+                  <input type="submit" class="btn btn-danger" value="Hapus" />
+                </form>
               </div>
               </td>
             </tr>

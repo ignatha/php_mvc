@@ -3,18 +3,14 @@
 <?php App\Cores\Views::startSection('content') ?>
 <div class="row">
     <div class="col">
-        <form action="/add" method="post">
+        <form action="/update/<?=$user->id?>" method="post">
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" name="name" class="form-control" id="name" placeholder="Full Name">
+            <input type="text" name="name" class="form-control" value="<?=$user->name?>" id="name" placeholder="Full Name">
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email address</label>
-            <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
-        </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" name="password" class="form-control" id="password">
+            <input type="email" name="email" class="form-control" value="<?=$user->email?>" id="email" placeholder="name@example.com">
         </div>
         <input type="submit" class="btn btn-success" value="Submit">
         </form>

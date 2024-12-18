@@ -46,7 +46,50 @@ class HomeController {
 
     public function edit($id)
     {
-        echo Views::render('home.edit');
+        $user = new User();
+        $getUser = $user->find($id);
+
+        if (!$getUser) {
+            echo 'user tidak ditemukan';
+            exit;
+        }
+
+        echo Views::render('home.edit',[
+            'user' => $getUser
+        ]);
+    }
+
+    public function update($id)
+    {
+        $data = $_POST;
+        $user = new User();
+
+        $simpan = $user->update($id,[
+            'name' => $data['name'],
+            'email' => $data['email'],
+        ]);
+
+        if ($simpan) {
+            header('Location: /');
+            exit;
+        }
+
+        echo "Gagal disimpan";
+        exit;
+    }
+
+    public function delete($id)
+    {
+        $user = new User();
+        $hapus = $user->delete($id);
+
+        if ($hapus) {
+            header('Location: /');
+            exit;
+        }
+
+        echo "Gagal dihapus";
+        exit;
     }
 }
 
