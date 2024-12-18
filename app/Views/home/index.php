@@ -1,29 +1,41 @@
 <?php App\Cores\Views::extend('master.app') ?>
 
 <?php App\Cores\Views::startSection('content') ?>
-<div>
-    <table>
+<div class="row">
+    <div class="col">
+    <a href="/add" class="btn btn-primary">Tambah</a>
+    <table class="table">
         <thead>
-            <tr>
-                <th>No</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Password</th>
-            </tr>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Action</th>
+          </tr>
         </thead>
         <tbody>
-            <?php foreach ($users as $index => $user): ?>
-                    <tr>
-                        <td><?=$index+1?></td>
-                        <td><?=$user->name?></td>
-                        <td><?=$user->email?></td>
-                        <td><?=$user->password?></td>
-                    </tr>  
-            <?php endforeach; ?>
-            <tr></tr>
+          <?php foreach ($users as $key => $user): ?>
+            
+            <tr>
+              <th scope="row"><?=$key+1?></th>
+              <td><?=$user->name?></td>
+              <td><?=$user->email?></td>
+              <td><?=$user->password?></td>
+              <td>
+              <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-warning">Edit</button>
+                <button type="button" class="btn btn-danger">Hapus</button>
+              </div>
+              </td>
+            </tr>
+
+          <?php endforeach; ?>          
         </tbody>
-    </table>
-</div>  
+      </table>
+
+    </div>
+</div>
 <?php App\Cores\Views::endSection() ?>
 
 
