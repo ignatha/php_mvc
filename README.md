@@ -9,5 +9,5 @@ pembahasan :
 - [x] membuat model untuk akses ke dalam database
 - [x] membuat crud sederhana dengan memanfaatkan mvc yang sudah dibuat
 - [x] membuat validasi form dan flash message
-- [ ] membuat fungsi login auth
 - [ ] membuat middleware untuk authentikasi
+- [ ] membuat fungsi login auth
