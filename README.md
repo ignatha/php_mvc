@@ -8,6 +8,6 @@ pembahasan :
 - [x] membuat view dan sistem templating sederhana
 - [x] membuat model untuk akses ke dalam database
 - [x] membuat crud sederhana dengan memanfaatkan mvc yang sudah dibuat
-- [ ] membuat validasi form dan flash message
+- [x] membuat validasi form dan flash message
 - [ ] membuat fungsi login auth
 - [ ] membuat middleware untuk authentikasi

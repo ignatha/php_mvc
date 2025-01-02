@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-use App\Cores\Views;
+use App\Cores\{Views,Validate, Flash};
 use App\Models\User;
 
 class HomeController {
@@ -29,6 +29,25 @@ class HomeController {
 
         $data = $_POST;
 
+        $validator = new Validate();
+
+        $validator->validate($data,[
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            foreach ($validator->errors() as $filed => $messages) {
+                foreach ($messages as $message) {
+                    Flash::set("error_{$filed}",$message);
+                }
+            }
+
+            header('Location: /add');
+            exit;
+        }
+
         $simpan = $user->create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -40,7 +59,7 @@ class HomeController {
             exit;
         }
 
-        echo "Gagal disimpan";
+        header('Location: /add');
         exit;
     }
 
